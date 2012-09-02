@@ -1,33 +1,13 @@
 /*
-    So you like the style of impress.js demo?
-    Or maybe you are just curious how it was done?
-    
-    You couldn't find a better place to find out!
-    
-    Welcome to the stylesheet impress.js demo presentation.
-    
-    Please remember that it is not meant to be a part of impress.js and is
-    not required by impress.js.
-    I expect that anyone creating a presentation for impress.js would create
-    their own set of styles.
-    
-    But feel free to read through it and learn how to get the most of what
-    impress.js provides.
-    
-    And let me be your guide.
-    
-    Shall we begin?
+CSS styles
+
+Colors from the Solarized color set
+http://ethanschoonover.com/solarized
+
 */
 
-
-/* 
-    We start with a good ol' reset.
-    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/ 
-    
-    You can probably argue if it is needed here, or not, but for sure it
-    doesn't do any harm and gives us a fresh start.
-*/
-
+/* =Reset
+--------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -74,55 +54,75 @@ table {
     border-spacing: 0;
 }
 
-/*
-    Now here is when interesting things start to appear.
-    
-    We set up <body> styles with default font and nice gradient in the background.
-    And yes, there is a lot of repetition there because of -prefixes but we don't
-    want to leave anybody behind.
-*/
+
+/* =Font-face
+--------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'arvoregular';
+    src: url('arvo-regular-webfont.eot');
+    src: url('arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('arvo-regular-webfont.woff') format('woff'),
+         url('arvo-regular-webfont.ttf') format('truetype'),
+         url('arvo-regular-webfont.svg#arvoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sansregular';
+    src: url('pt_sans-web-regular-webfont.eot');
+    src: url('pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pt_sans-web-regular-webfont.woff') format('woff'),
+         url('pt_sans-web-regular-webfont.ttf') format('truetype'),
+         url('pt_sans-web-regular-webfont.svg#pt_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* =Global
+--------------------------------------------------------------*/
+
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'pt_sansregular', sans-serif;
     min-height: 740px;
     
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));    
+    background: #fdf6e3;
+    color: #444;    
 }
+
+a, a:active, a:visited {
+    color: #607890;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    background: #036;
+}
+
+
+/* =Headings
+--------------------------------------------------------------*/
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: #586e75;
+	font-family: 'arvoregular', Helvetica, Arial, sans-serif;
+	font-size: 50px;
+	line-height: 70px;
+}
+
+
+
+
 
 /*
     Now let's bring some text styles back ...
 */
 b, strong { font-weight: bold }
 i, em { font-style: italic }
-
-/*
-    ... and give links a nice look.
-*/
-a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0 0.1em;
-    background: rgba(255,255,255,0.5);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
-    border-radius: 0.2em;
-    
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
-}
-
-a:hover,
-a:focus {
-    background: rgba(255,255,255,1);
-    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
-}
 
 /*
     Because the main point behind the impress.js demo is to demo impress.js
@@ -175,7 +175,6 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
 }
@@ -221,7 +220,6 @@ a:focus {
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
-    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
