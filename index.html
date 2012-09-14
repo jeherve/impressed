@@ -63,6 +63,7 @@
 	
 	    <div id="options" class="step slide" data-x="1000" data-y="-1500">
 	        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+	        <div id="chartcontainer"></div>
 	    </div>
 	
 	    <!--
@@ -156,6 +157,33 @@
 
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
+<script type="text/javascript">impress().init();</script>
+<script src="js/raphael.js"></script>
+<script src="js/g.raphael-min.js"></script>
+<script src="js/g.pie-min.js"></script>
+<script type="text/javascript">
+            window.onload = function () {
+                var r = Raphael("chartcontainer"),
+                    pie = r.piechart(320, 180, 160, [61, 14, 13, 8, 4, 1, 1, 1], { legend: ["Keynote - %%", "PDF - %%", "No Slides - %%", "Powerpoint - %%", "Open Office - %%", "HTML - %%", "Video - %%", "Audio - %%" ], colors: [ "#cb4b16", "#dc322f", "#d33682", "#6c71c4", "#268bd2", "#2aa198", "#859900", "#b58900" ], legendcolor: "#657B83" }).attr({ font: "20px 'pt_sansregular', sans-serif" });
 
+                pie.hover(function () {
+                    this.sector.stop();
+                    this.sector.scale(1.1, 1.1, this.cx, this.cy);
+
+                    if (this.label) {
+                        this.label[0].stop();
+                        this.label[0].attr({ r: 7.5 });
+                        this.label[1].attr({ "font-weight": 800 });
+                    }
+                }, function () {
+                    this.sector.animate({ transform: 's1 1 ' + this.cx + ' ' + this.cy }, 500, "bounce");
+
+                    if (this.label) {
+                        this.label[0].animate({ r: 5 }, 500, "bounce");
+                        this.label[1].attr({ "font-weight": 400 });
+                    }
+                });
+            };
+</script>
 </body>
 </html>
