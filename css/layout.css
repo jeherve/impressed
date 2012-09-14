@@ -339,6 +339,14 @@ h3 {
 	text-transform: capitalize;
 }
 
+#overview h3 {
+	color: #657B83;
+	font-size: 20px;
+	line-height: 20px;
+	margin-left: 200px;
+	text-transform: lowercase;
+}
+
 
 /* =Overview steps
 --------------------------------------------------------------*/
