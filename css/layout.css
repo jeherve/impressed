@@ -361,8 +361,6 @@ h3 {
     cursor: pointer;
 }
 
-
-
 /*
     And as the last thing there is a workaround for quite strange bug.
     It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
@@ -386,3 +384,33 @@ h3 {
 */
 .impress-enabled          { pointer-events: none }
 .impress-enabled #impress { pointer-events: auto }
+
+/* Tablet Layout */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.ribbon {
+		display: none;
+	}
+
+}
+
+/* Mobile Layout */
+
+@media only screen and (max-width: 767px) {
+	
+	.ribbon {
+		display: none;
+	}
+	
+}
+
+/* Wide Mobile Layout: */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	.ribbon {
+		display: none;
+	}
+	
+}
